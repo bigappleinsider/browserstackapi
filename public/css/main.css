@@ -1,0 +1,15 @@
+.search-actions{
+    margin-top: 25px;
+}
+.reports-table{
+    margin-top: 20px;
+}
+body{
+    padding-top: 75px;
+}
+.users .panel-heading{
+    height: 40px;
+}
+.pointer{
+    cursor: pointer;
+}
