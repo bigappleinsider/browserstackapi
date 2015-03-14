@@ -18,14 +18,14 @@ return array(
 	|
 	*/
 
-	'connections' => array(
+    'connections' => array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'homestead',
-			'username'  => 'homestead',
-			'password'  => 'secret',
+			'host'      => getenv('mysql_host'),
+			'database'  => getenv('mysql_database'),
+			'username'  => getenv('mysql_username'),
+			'password'  => getenv('mysql_password'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
