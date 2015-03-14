@@ -24,9 +24,11 @@ http://youtu.be/6Y349Zugnmo
 - Example configuration file .env.example.php should be updated and copied over to corresponding file. For example, .env.prod.php (based on APP_ENV environment variable)
 
 ###Installation
+```
 composer install
 php artisan migrate
 php artisan db:seed
+```
 
 ###Recommendations
 - Local installations should use homestead, as it provides ready to use system http://laravel.com/docs/4.2/homestead
