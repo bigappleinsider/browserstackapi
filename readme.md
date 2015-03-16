@@ -18,7 +18,6 @@ http://youtu.be/6Y349Zugnmo
 - Beanstalk http://kr.github.io/beanstalkd/download.html
 - Beanstalk console https://github.com/ptrofimov/beanstalk_console
 - Supervisor http://supervisord.org/installing.html
-- Configure supervisor http://blog.bigappleinsider.com/content/supervisor
 - Mandrill Key https://mandrill.com/
 - Browserstack Screenshots API usr/pwd http://www.browserstack.com/screenshots/api
 - Example configuration file .env.example.php should be updated and copied over to corresponding file. For example, .env.prod.php (based on APP_ENV environment variable)
@@ -29,6 +28,35 @@ composer install
 php artisan migrate
 php artisan db:seed
 ```
+###Configure Supervisor
+Restarting
+```
+sudo service supervisor start
+sudo supervisorctl reload
+```
+
+/etc/supervisor/conf.d/queue.conf
+```
+[program:queue]
+command=php artisan queue:listen
+directory=/home/vagrant/laravel-root/automation
+stdout_logfile=/home/vagrant/laravel-root/automation/app/storage/logs/supervisor.log
+redirect_stderr=true
+```
+
+supervisorctl
+```
+supervisor> status
+supervisor> reread
+queue: available
+supervisor> add queue
+queue: added process group
+supervisor> start queue
+queue: ERROR (already started)
+supervisor> status
+queue                            RUNNING    pid 27174, uptime 0:00:11
+```
+
 
 ###Recommendations
 - Local installations should use homestead, as it provides ready to use system http://laravel.com/docs/4.2/homestead
