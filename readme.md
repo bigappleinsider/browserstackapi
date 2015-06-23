@@ -22,6 +22,16 @@ http://youtu.be/6Y349Zugnmo
 - Browserstack Screenshots API usr/pwd http://www.browserstack.com/screenshots/api
 - Example configuration file .env.example.php should be updated and copied over to corresponding file. For example, .env.prod.php (based on APP_ENV environment variable)
 
+###Configuration
+1. copy .env.example.php to .env.php
+2. fill in blanks in .env.php with correct info: keys, email etc
+3. edit apache config for the site (On Ubuntu it's located in /etc/apache2/sites-enabled/automation.conf in my case)
+4. add the following:
+```
+SetEnv APP_ENV production
+```
+5. restart apache (On Ubuntu command is: `sudo service apache2 restart` )
+
 ###Installation
 ```
 composer install
