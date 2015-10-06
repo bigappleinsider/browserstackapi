@@ -35,6 +35,10 @@ composer install
 php artisan migrate
 php artisan db:seed
 ```
+###Refresh Browser List
+```
+php artisan db:seed --class="BrowserTableSeeder"
+```
 ###Configure Supervisor
 Restarting
 ```
